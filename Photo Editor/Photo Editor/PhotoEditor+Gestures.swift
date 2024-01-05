@@ -88,6 +88,7 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
      Selecting transparent parts of the imageview won't move the object
      */
     @objc func tapGesture(_ recognizer: UITapGestureRecognizer) {
+        hideToolbar(hide: true)
         if let view = recognizer.view {
             if view is UIImageView {
                 //Tap only on visible parts on the image
