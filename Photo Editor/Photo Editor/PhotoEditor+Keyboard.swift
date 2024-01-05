@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension PhotoEditorViewController {
-    
+
     @objc func keyboardDidShow(notification: NSNotification) {
         if isTyping {
             doneButton.isHidden = false
@@ -18,13 +18,13 @@ extension PhotoEditorViewController {
             hideToolbar(hide: true)
         }
     }
-    
+
     @objc func keyboardWillHide(notification: NSNotification) {
-        isTyping = false
-        doneButton.isHidden = true
-        hideToolbar(hide: false)
+         isTyping = false
+         doneButton.isHidden = false
+         hideToolbar(hide: true)
     }
-    
+
     @objc func keyboardWillChangeFrame(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
