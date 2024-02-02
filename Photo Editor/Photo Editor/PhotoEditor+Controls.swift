@@ -51,6 +51,7 @@ extension PhotoEditorViewController {
         doneButton.isHidden = false
         colorPickerView.isHidden = false
         hideToolbar(hide: true)
+        photoEditorDelegate?.prformedEditing(action: "draw")
     }
 
     @IBAction func textButtonTapped(_ sender: Any) {
@@ -72,6 +73,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(textView)
         addGestures(view: textView)
         textView.becomeFirstResponder()
+        photoEditorDelegate?.prformedEditing(action: "text")
     }    
     
     @IBAction func doneButtonTapped(_ sender: Any) {
@@ -106,6 +108,7 @@ extension PhotoEditorViewController {
         for subview in canvasImageView.subviews {
             subview.removeFromSuperview()
         }
+        photoEditorDelegate?.prformedEditing(action: "eraseAll")
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {

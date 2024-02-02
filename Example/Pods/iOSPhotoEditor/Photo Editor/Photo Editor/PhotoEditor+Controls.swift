@@ -47,7 +47,7 @@ extension PhotoEditorViewController {
         doneButton.isHidden = false
         colorPickerView.isHidden = false
         hideToolbar(hide: true)
-    }
+            }
 
     @IBAction func textButtonTapped(_ sender: Any) {
         isTyping = true
@@ -68,7 +68,7 @@ extension PhotoEditorViewController {
         self.canvasImageView.addSubview(textView)
         addGestures(view: textView)
         textView.becomeFirstResponder()
-    }    
+            }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
@@ -98,7 +98,7 @@ extension PhotoEditorViewController {
         for subview in canvasImageView.subviews {
             subview.removeFromSuperview()
         }
-    }
+            }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
         let img = self.canvasView.toImage()
@@ -108,9 +108,9 @@ extension PhotoEditorViewController {
 
     //MAKR: helper methods
     
-    func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
-        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+    @objc func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
+        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

@@ -23,6 +23,8 @@ import UIKit
      StickersViewController did Disappear
      */
     func canceledEditing()
+
+    func prformedEditing(action: String)
 }
 
 
